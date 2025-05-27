@@ -1,120 +1,125 @@
-/* Basic Body Styling */
+/**
+ * Wookiefoot Lyrics Website - Main Stylesheet
+ *
+ * Provides basic styling for a clean and readable presentation of albums,
+ * songs, and lyrics.
+ */
+
+/* Global Styles */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Header and Main Content Area */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header a, header a:visited {
-    color: #fff;
-    text-decoration: none;
-    padding: 0 10px;
-}
-
-header a:hover {
-    text-decoration: underline;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
 main {
-    padding: 10px;
+  padding: 10px; /* Provides some spacing for the main content area */
 }
 
-/* Headings */
-h1 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+/* Header Styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 20px; /* Adjusted padding to match body padding */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header a,
+header a:visited {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px; /* Spacing for multiple links in header if any */
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Typography */
+h1 { /* General h1, e.g., page titles not in main site header */
+  font-size: 2em;
+  margin-bottom: 0.5em;
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-    color: #555;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #555; /* Slightly lighter than default text for sub-headings */
 }
 
-/* Links */
-a, a:visited {
-    color: #007bff;
-    text-decoration: none;
+/* Link Styles */
+a,
+a:visited {
+  color: #007bff; /* Standard blue link color */
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #0056b3;
+  text-decoration: underline;
+  color: #0056b3; /* Darker blue on hover */
 }
 
-/* Containers for Album and Song Lists */
+/* Content Containers */
 #album-list-container,
-#song-list-container {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+#song-list-container,
+#lyrics-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff; /* White background for content areas */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 5px; /* Slightly rounded corners */
 }
 
-/* Styling for items within containers (if they become links or list items) */
+/* Specific Styling for Links within Album/Song Lists */
 #album-list-container a,
 #song-list-container a {
-    display: block;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
+  display: block; /* Make links take full width for easier clicking */
+  padding: 8px 0; /* Vertical padding for each link */
+  border-bottom: 1px solid #eee; /* Separator line between links */
 }
 
 #album-list-container a:last-child,
 #song-list-container a:last-child {
-    border-bottom: none;
+  border-bottom: none; /* Remove border from the last item in the list */
 }
 
-/* Lyrics Container */
+/* Lyrics Container Specifics */
 #lyrics-container {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font for lyrics */
-    white-space: pre-wrap; /* Handles long lines and preserves whitespace */
-    line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace; /* Monospaced font for lyrics presentation */
+  white-space: pre-wrap; /* Preserves whitespace and newlines, wraps long lines */
+  line-height: 1.5; /* Slightly increased line height for readability */
 }
 
-/* Basic List Styling (for potential future use) */
+/* Basic List Styling (Unused for now, but good for potential future use) */
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none; /* Removes default bullet points */
+  padding: 0;
 }
 
 li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
 }
 
 li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-    font-size: 0.9em;
-    color: #666;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc; /* Separator line above footer */
+  font-size: 0.9em;
+  color: #666; /* Grey color for footer text */
 }

@@ -1,209 +1,60 @@
-# GraphReporter
+# Wookiefoot Lyrics Website
 
-A Python CLI tool for retrieving and reporting Microsoft Entra ID (Azure AD) data using Microsoft Graph API.
+A simple website to display Wookiefoot albums, songs, and their lyrics.
 
-![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+## How to View Locally
 
-## Overview
+1.  Ensure you have all the project files in the same directory:
+    *   `index.html`
+    *   `album.html`
+    *   `song.html`
+    *   `style.css`
+    *   `script.js`
+    *   `db.json`
+2.  Open the `index.html` file in your web browser (e.g., Chrome, Firefox, Safari).
 
-GraphReporter is a command-line tool that helps IT administrators and security professionals extract and analyze data from Microsoft Entra ID (Azure AD). It uses the Microsoft Graph API to retrieve sign-in logs, app registrations, and enterprise applications, and exports this data in various formats for analysis.
+## How to Update Content
 
-### Features
+The website's data is stored in the `db.json` file. You can edit this file to add more albums, songs, or update lyrics.
 
-- **Authentication**: Secure client credentials (app-only) authentication with Microsoft Graph API
-- **Data Retrieval**: Fetch sign-in logs, app registrations, and enterprise apps
-- **Filtering**: Filter data by date, type, and other properties
-- **Export**: Export data to CSV, Excel, or JSON formats
-- **Pagination**: Handle large datasets with proper pagination
+### Data Structure
 
-## Prerequisites
+The `db.json` file has the following structure:
 
-Before using GraphReporter, you need to:
-
-1. Register an application in Microsoft Entra ID (Azure AD)
-2. Grant the following API permissions:
-   - AuditLog.Read.All (Application)
-   - Directory.Read.All (Application)
-   - Application.Read.All (Application)
-3. Generate a client secret
-
-## Installation
-
-### Using uv (Recommended)
-```bash
-# Install uv if you haven't already
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Clone the repository
-git clone https://github.com/yourusername/graphreporter.git
-cd graphreporter
-
-# Create and activate a virtual environment with uv
-uv venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install the package
-uv pip install -e .
+```json
+{
+  "albums": [
+    {
+      "id": "album-unique-id", // Lowercase, hyphenated version of the title
+      "title": "Album Title",
+      "year": YYYY, // Optional: release year
+      "songs": [
+        {
+          "title": "Song Title",
+          "lyrics": "Full song lyrics here..."
+        }
+        // ... more songs
+      ]
+    }
+    // ... more albums
+  ]
+}
 ```
 
-### Using pip (Alternative)
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/graphreporter.git
-cd graphreporter
+### Adding a New Album
 
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+1.  Copy an existing album object in the `albums` array.
+2.  Update the `id` (make it unique, lowercase, and hyphenated), `title`, and `year` (optional).
+3.  Add song objects to its `songs` array.
 
-# Install the package
-pip install -e .
-```
+### Adding a New Song to an Album
 
-## Configuration
+1.  Find the album object in the `albums` array by its `id` or `title`.
+2.  Add a new song object to its `songs` array. Each song needs a `title` and `lyrics`.
 
-GraphReporter requires the following configuration:
+### Updating Lyrics
 
-1. Create a `.env` file in the project root with your Azure AD details:
+1.  Find the album and then the specific song within `db.json`.
+2.  Replace the value of the `lyrics` property with the correct lyrics. Make sure to keep the lyrics as a JSON string (meaning special characters like newlines should be escaped as `\n` if you're editing it raw, or just paste as a multi-line string if your editor supports that for JSON).
 
-```
-GRAPH_TENANT_ID=your-tenant-id
-GRAPH_CLIENT_ID=your-client-id
-GRAPH_CLIENT_SECRET=your-client-secret
-```
-
-Or set these environment variables manually:
-
-```bash
-export GRAPH_TENANT_ID=your-tenant-id
-export GRAPH_CLIENT_ID=your-client-id
-export GRAPH_CLIENT_SECRET=your-client-secret
-```
-
-## Usage
-
-### Fetch Sign-In Logs
-
-```bash
-# Fetch sign-in logs for the last 7 days in CSV format
-python -m graphreporter fetch-signins --last-days 7 --format csv
-
-# Fetch sign-in logs within a specific date range in Excel format
-python -m graphreporter fetch-signins --start-date 2023-01-01 --end-date 2023-01-31 --format excel
-
-# Fetch sign-in logs and filter by specific user
-python -m graphreporter fetch-signins --last-days 30 --user-id user@example.com
-```
-
-### List App Registrations
-
-```bash
-# List all app registrations in CSV format
-python -m graphreporter list-apps --format csv
-
-# List app registrations with specific permissions
-python -m graphreporter list-apps --permission "Mail.Read"
-```
-
-### List Enterprise Applications
-
-```bash
-# List all enterprise apps in CSV format
-python -m graphreporter list-service-principals --format csv
-
-# List recently added enterprise apps
-python -m graphreporter list-service-principals --created-after 2023-01-01
-```
-
-### General Options
-
-```bash
-# Get help
-python -m graphreporter --help
-
-# Get help for a specific command
-python -m graphreporter fetch-signins --help
-
-# Specify output directory
-python -m graphreporter fetch-signins --last-days 7 --output-dir ./reports
-```
-
-## Output Examples
-
-### Sign-In Logs CSV Example
-
-```
-id,createdDateTime,userPrincipalName,appDisplayName,ipAddress,clientAppUsed,status
-01234567-89ab-cdef-0123-456789abcdef,2023-01-15T14:32:16Z,user@example.com,Microsoft Office,203.0.113.1,Mobile Apps and Desktop clients,success
-```
-
-### App Registrations Excel Example
-
-The Excel output includes:
-- App ID
-- Display Name
-- App Permissions
-- Granted Permissions
-- Creation Date
-- Owner Information
-
-## Development
-
-### Setup Development Environment
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/graphreporter.git
-cd graphreporter
-
-# Using uv (recommended)
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies with uv
-uv pip install -r requirements.txt
-uv pip install -r requirements-dev.txt
-
-# Alternative: Using traditional venv
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-pip install -r requirements-dev.txt
-```
-
-### Running Tests
-
-```bash
-# Run all tests
-pytest
-
-# Run tests with coverage
-pytest --cov=graphreporter
-```
-
-## Project Structure
-
-```
-graphreporter/
-├── cli/                 # CLI commands
-├── auth/                # Authentication module
-├── graph/               # Graph API clients
-├── export/              # Export functionality
-├── config/              # Configuration management
-└── utils/               # Utility functions
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- [Microsoft Graph API Documentation](https://docs.microsoft.com/en-us/graph/overview)
-- [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python) 
+**Note:** After editing `db.json`, simply refresh the website in your browser to see the changes.

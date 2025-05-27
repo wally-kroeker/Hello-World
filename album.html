@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Album Details</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album Details</title> <!-- Title will be dynamically updated if possible -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 id="album-title"></h1>
-        <a href="index.html">Back to Album List</a>
-    </header>
-    <main>
-        <div id="song-list-container">
-            <!-- Song links will be inserted here by JavaScript -->
-        </div>
-    </main>
-    <footer>
-        <!-- Optional footer content -->
-    </footer>
-    <script src="script.js"></script>
+  <header>
+    <h1 id="album-title"><!-- Album title will be inserted here by JavaScript --></h1>
+    <a href="index.html">Back to Album List</a>
+  </header>
+  <main>
+    <!-- Container where song links for the current album will be dynamically inserted -->
+    <div id="song-list-container">
+      <!-- Example:
+      <div><a href="song.html?albumId=album-id&songTitle=Song%20Title%201">Song Title 1</a></div>
+      <div><a href="song.html?albumId=album-id&songTitle=Song%20Title%202">Song Title 2</a></div>
+      -->
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Wookiefoot Fan Page. Lyrics for educational purposes only.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
