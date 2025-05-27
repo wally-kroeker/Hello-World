@@ -1,0 +1,47 @@
+{
+  "albums": [
+    {
+      "id": "writing-on-the-wall",
+      "title": "Writing on the Wall",
+      "year": null,
+      "songs": [
+        { "title": "Happy to Be Here", "lyrics": "Lyrics not yet available." },
+        { "title": "All Over Again", "lyrics": "Lyrics not yet available." },
+        { "title": "The Great Unknown", "lyrics": "Lyrics not yet available." },
+        { "title": "Slow Your Motion", "lyrics": "Lyrics not yet available." },
+        { "title": "Writing On The Wall", "lyrics": "Lyrics not yet available." },
+        { "title": "Two Ways to Learn", "lyrics": "Lyrics not yet available." },
+        { "title": "Monster Hugs", "lyrics": "Lyrics not yet available." },
+        { "title": "While We Live", "lyrics": "Lyrics not yet available." },
+        { "title": "All Do Well", "lyrics": "Lyrics not yet available." },
+        { "title": "Small But Fierce", "lyrics": "Lyrics not yet available." },
+        { "title": "Solstice", "lyrics": "Lyrics not yet available." },
+        { "title": "A Great and Unlikely Story", "lyrics": "Lyrics not yet available." }
+      ]
+    },
+    {
+      "id": "youre-it",
+      "title": "YOU'RE IT!",
+      "year": null,
+      "songs": [
+        { "title": "Intro...", "lyrics": "Lyrics not yet available." },
+        { "title": "Who Are You?", "lyrics": "Lyrics not yet available." },
+        { "title": "AIR", "lyrics": "Lyrics not yet available." },
+        { "title": "Don Quixote", "lyrics": "Lyrics not yet available." },
+        { "title": "Don't Hold Your Breath", "lyrics": "Lyrics not yet available." },
+        { "title": "WATER", "lyrics": "Lyrics not yet available." },
+        { "title": "You're It!", "lyrics": "Lyrics not yet available." },
+        { "title": "The Road", "lyrics": "Lyrics not yet available." },
+        { "title": "EARTH", "lyrics": "Lyrics not yet available." },
+        { "title": "Long Way", "lyrics": "Lyrics not yet available." },
+        { "title": "No Man's Land", "lyrics": "Lyrics not yet available." },
+        { "title": "FIRE", "lyrics": "Lyrics not yet available." },
+        { "title": "Keep it Light", "lyrics": "Lyrics not yet available." },
+        { "title": "The Eighth Fire", "lyrics": "Lyrics not yet available." },
+        { "title": "SPIRIT", "lyrics": "Lyrics not yet available." },
+        { "title": "No Body", "lyrics": "Lyrics not yet available." },
+        { "title": "Come to Life", "lyrics": "Lyrics not yet available." }
+      ]
+    }
+  ]
+}

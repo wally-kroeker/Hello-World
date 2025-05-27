@@ -1,0 +1,120 @@
+/* Basic Body Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Main Content Area */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header a, header a:visited {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 10px;
+}
+
+/* Headings */
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+/* Links */
+a, a:visited {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Containers for Album and Song Lists */
+#album-list-container,
+#song-list-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Styling for items within containers (if they become links or list items) */
+#album-list-container a,
+#song-list-container a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#album-list-container a:last-child,
+#song-list-container a:last-child {
+    border-bottom: none;
+}
+
+/* Lyrics Container */
+#lyrics-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for lyrics */
+    white-space: pre-wrap; /* Handles long lines and preserves whitespace */
+    line-height: 1.5;
+}
+
+/* Basic List Styling (for potential future use) */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+    color: #666;
+}
