@@ -1,0 +1,76 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/  # UV default venv directory
+
+# UV
+.uv/  # UV cache directory
+
+# Environment variables and secrets
+.env
+*.pem
+*.key
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Output directory
+output/
+
+# IDE / Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.clinerules/
+.cursor/rules/error-documentation.mdc
+.cursor/rules/lessons-learned.mdc
+
+# Logs
+*.log
+
+# Logs and temp files
+logs/
+tmp/
+temp/ 
